@@ -1,0 +1,57 @@
+.app_header{
+display: flex;
+justify-content: center;
+align-items: center;
+border-bottom: 1px solid #dcdcdc;
+}
+
+.app_header >form{
+    width: 60%;
+}
+
+
+.task_input{
+    font-size: 20px;
+    font-weight: 500px;
+    border: 1px solid #154163;
+    background-color: #f9f9f9;
+    color: black;
+    width: 100%;
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-bottom: 15px;
+
+}
+
+.task_form_bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.task_status{
+    margin: 5px; 
+    height: 38px;
+    width: 220px;
+    font-weight: 500px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #154163;
+    padding: 0 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    margin-bottom: 0px;
+}
+.task_submit{
+    font-weight: 400px;
+    font-size: 15px;
+    background-color: blue;
+    color: #ffffff;
+    padding: 5px 10px;
+    height: 38px;
+    border: 1px solid white;
+    border-radius: 5px  ;
+    cursor: pointer;
+    margin-bottom: 0px;
+}

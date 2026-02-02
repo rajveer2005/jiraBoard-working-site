@@ -1,0 +1,9 @@
+.Task_Column_Heading{
+    display: flex;
+    align-items: center;
+}
+
+.task_coloumn{
+
+  margin: 20px;
+}
