@@ -10,11 +10,6 @@ const [TaskData , setTaskData] = useState ({
   status : "Ready For Development"
 });
 
-const [TaskData1 , setTask1Data] = useState ({
-  // initail values
-  task : "",
-  status : "Ready For Development"
-});
 
 const handleChange = (e) =>{
   const {name, value} = e.target;
