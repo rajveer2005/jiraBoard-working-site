@@ -7,8 +7,13 @@ const TaskForm = () => {
 const [TaskData , setTaskData] = useState ({
   // initail values
   task : "",
-  status : "Ready For Development"
+  status : "Ready For Development",
+  tags : []
 });
+
+const checkTag= (tag) =>{
+    return (TaskData.tags.some((item)=> item === tag));
+}
 
 
 const handleChange = (e) =>{
@@ -21,6 +26,32 @@ const handleSubmit = (e)=>{
   e.preventDefault();
 console.log(TaskData);
 }
+
+const selectTag = (tag) =>{
+  if(TaskData.tags.some((item)=> item === tag)){
+    const filterTags = TaskData.tags.filter((item)=> item !== tag);
+   setTaskData((prev)=>{
+    return {...prev,tags:filterTags};
+   });      
+  }else{
+    setTaskData((prev)=>{
+  return { ...prev, tags: [...prev.tags, tag] };
+    });
+  }
+};
+console.log(TaskData);
+
+// Click Tag
+//    ↓
+// Check: Is it in tags?
+//    ↓
+// Yes → remove it
+// No  → add it
+//    ↓
+// Update React state
+//    ↓
+// UI re-renders
+
 
       // const [task,setTask] = useState("");
       // const [status,setStatus] = useState("");
@@ -43,9 +74,9 @@ console.log(TaskData);
         />
         <div className="task_form_bottom">
         <div>
-             <Tag tagName = "DEV"/>
-             <Tag tagName = "QA"/>
-             <Tag tagName = "Product Owner"/>
+             <Tag tagName = "DEV" selectTag = {selectTag} selected = {checkTag("DEV")}/>
+             <Tag tagName = "QA" selectTag = {selectTag} selected = {checkTag("QA")}/>
+             <Tag tagName = "Product Owner" selectTag = {selectTag} selected = {checkTag("Product Owner")}/>
             
         </div>
         <div>
