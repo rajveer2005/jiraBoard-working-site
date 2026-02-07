@@ -1,8 +1,9 @@
 import "./task-form.css"
 import React from "react";
-import Tag from "../Tag/tag";
+import Tag from "../Tag/Tag";
+
 import { useState } from "react";
-const TaskForm = () => {
+const TaskForm = ({setTasks}) => {
 
 const [TaskData , setTaskData] = useState ({
   // initail values
@@ -24,44 +25,34 @@ const handleChange = (e) =>{
 }
 const handleSubmit = (e)=>{
   e.preventDefault();
-console.log(TaskData);
+  setTasks((prev)=>{
+    return [...prev,TaskData]
+  })
 }
 
+
 const selectTag = (tag) =>{
-  if(TaskData.tags.some((item)=> item === tag)){
-    const filterTags = TaskData.tags.filter((item)=> item !== tag);
-   setTaskData((prev)=>{
-    return {...prev,tags:filterTags};
-   });      
-  }else{
     setTaskData((prev)=>{
-  return { ...prev, tags: [...prev.tags, tag] };
-    });
-  }
+      const isSelected = prev.tags.includes(tag);
+      const tags = isSelected 
+      ? prev.tags.filter((item)=> item !==tag) 
+      : [...prev.tags,tag];
+      return {...prev ,tags};
+    })
+  
+  // if(TaskData.tags.some((item)=> item === tag)){
+  //   const filterTags = TaskData.tags.filter((item)=> item !== tag);
+  //  setTaskData((prev)=>{
+  //   return {...prev,tags:filterTags};
+  //  });      
+  // }else{
+  //   setTaskData((prev)=>{
+  // return { ...prev, tags: [...prev.tags, tag] };
+  //   });
+  // }
 };
 console.log(TaskData);
 
-// Click Tag
-//    ↓
-// Check: Is it in tags?
-//    ↓
-// Yes → remove it
-// No  → add it
-//    ↓
-// Update React state
-//    ↓
-// UI re-renders
-
-
-      // const [task,setTask] = useState("");
-      // const [status,setStatus] = useState("");
-      //   const handleTask = (e) =>{
-      //     setTask(e.target.value);
-      //   }
-      //   const handleStatusChange =(e) =>{
-      //     setStatus(e.target.value);
-      //   }
-      //   console.log(task,status);
        return (
       <header className='app_header'>
       <form onSubmit={handleSubmit}>

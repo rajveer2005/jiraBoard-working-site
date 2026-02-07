@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Tag.css"
+import { tagStyle,tagKeyMap } from '../../constant/Common';
 
 const Tag = (props) => {
     const {tagName, selectTag , selected} = props;
