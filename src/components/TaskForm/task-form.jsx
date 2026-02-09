@@ -21,7 +21,7 @@ const handleChange = (e) =>{
   const {name, value} = e.target;
   setTaskData((prev)=>{
     return {...prev, [name] : value}
-  });
+  })
 }
 const handleSubmit = (e)=>{
   e.preventDefault();
