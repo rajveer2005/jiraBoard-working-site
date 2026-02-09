@@ -27,7 +27,7 @@ const handleSubmit = (e)=>{
   e.preventDefault();
   setTasks((prev)=>{
     return [...prev,TaskData]
-  })
+  });
 }
 
 
