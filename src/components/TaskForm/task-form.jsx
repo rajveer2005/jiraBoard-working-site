@@ -71,18 +71,21 @@ console.log(TaskData);
             
         </div>
         <div>
-        <select className='task_status' 
-            name = "status"
-            onChange={handleChange}>
-            <option value="Ready for development">Ready for development</option>
-            <option value="in progress">in progress</option>
-            <option vlaue = "Ready for test">Ready for test</option>
-            <option vlaue = "Close">Close</option>
-        </select>
+        <select
+  className='task_status'
+  name="status"
+  onChange={handleChange}
+>
+  <option value="Ready for development">Ready for development</option>
+  <option value="In Progress">In Progress</option>
+  <option value="Ready for test">Ready for test</option>
+  <option value="Closed">Closed</option>
+</select>
+
         <button type='submit' className='task_submit'>++Add</button>
         </div>
         </div>
-      </form>
+      </form> 
 
       </header>
 

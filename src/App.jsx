@@ -9,13 +9,14 @@ const App = () => {
   return (
     <div className='app'>
       <h1 style={{textAlign:"center",paddingTop:"80px"}}>Jira board</h1>
-      <h1 style={{textAlign:"center",paddingTop:"80px"}}>Jira board</h1>
-      <h1 style={{textAlign:"center",paddingTop:"80px"}}>Jira board</h1>
-      <TaskForm setTasks={setTasks}/>
+
+       <TaskForm setTasks={setTasks}/>
       <main className='app_main'>
-        <TaskColumn title = "Ready for development" 
+        <TaskColumn 
+        title = "Ready for development" 
         task = {task} 
-        status= "Ready for development"/>
+        status= "Ready for development"
+        />
         <TaskColumn
          title = "In Progress"
         task = {task} 
