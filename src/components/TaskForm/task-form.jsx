@@ -5,12 +5,7 @@ import Tag from "../Tag/Tag";
 import { useState } from "react";
 const TaskForm = ({setTasks}) => {
 
-const [TaskData , setTaskData] = useState ({
-  // initail values
-  task : "",
-  status : "Ready For Development",
-  tags : []
-});
+
 
 const checkTag= (tag) =>{
     return (TaskData.tags.some((item)=> item === tag));
@@ -23,7 +18,12 @@ const handleChange = (e) =>{
     return {...prev, [name] : value}
   })
 }
-
+const handleSubmit = (e)=>{
+  e.preventDefault();
+  setTasks((prev)=>{
+    return [...prev,TaskData]
+  });
+}
 
 
 const selectTag = (tag) =>{
